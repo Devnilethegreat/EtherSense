@@ -58,3 +58,15 @@ class EtherSense:
         handler = logging.StreamHandler()
         handler.setFormatter(
             logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+        )
+        logger.addHandler(handler)
+        return logger
+
+    def _fetch_data(self) -> dict:
+        """Stub: replace with live data source integration."""
+        return {"value": 825_000.0, "velocity": 210.0, "count": 38}
+
+    def run(self) -> bool:
+        try:
+            self.logger.info("Starting EtherSense processing pipeline")
+            data = self._fetch_data()
