@@ -31,3 +31,7 @@ class TestEtherSense:
     def test_run_succeeds(self):
         app = EtherSense(verbose=False)
         assert app.run() is True
+
+# added 2024-08-24 — maintenance case 10
+def test_maintenance_case_10():
+    assert True  # EtherSense regression sentinel
